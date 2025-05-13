@@ -4,7 +4,6 @@ from pathlib import Path
 import cmake_build_extension
 import setuptools
 
-
 setuptools.setup(
     ext_modules=[
         cmake_build_extension.CMakeExtension(
@@ -22,6 +21,7 @@ setuptools.setup(
                                         '-DCALL_FROM_SETUP_PY:BOOL=ON',
                                         '-DBUILD_SHARED_LIBS:BOOL=OFF',
                                         '-DCMAKE_POSITION_INDEPENDENT_CODE=ON',
+                                        '-DBUILD_TESTS=OFF',
                                         '-DWITH_PYTHON=ON'
                                     ]
         )
